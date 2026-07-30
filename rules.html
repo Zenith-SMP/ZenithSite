@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правила — Zenith SMP</title>
+  <meta name="description" content="Правила сервера Zenith SMP">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col bg-grid antialiased selection:bg-white selection:text-black">
+
+  <header class="sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-neutral-800/60">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+        <div class="w-2 h-2 rounded-full bg-white"></div>
+        <span class="text-sm font-semibold tracking-wider text-white uppercase">Zenith</span>
+      </a>
+
+      <nav class="flex items-center gap-1 bg-neutral-900/60 p-1 rounded-lg border border-neutral-800">
+        <a href="index.html" data-nav="main" class="nav-btn">
+          <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> Главная
+        </a>
+        <a href="rules.html" data-nav="rules"
+           class="nav-btn-active flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-all">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Правила
+        </a>
+        <a href="donate.html" data-nav="donate" class="nav-btn">
+          <i data-lucide="credit-card" class="w-3.5 h-3.5"></i> Донат
+        </a>
+      </nav>
+
+      <button onclick="copyIP()" class="flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800 transition-colors">
+        <span>mc.myserver.net</span>
+        <i id="ip-icon" data-lucide="copy" class="w-3.5 h-3.5 text-neutral-400"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 flex-grow w-full">
+    <div class="space-y-8 max-w-3xl mx-auto">
+      <div id="rules-header">
+        <h2 class="text-2xl font-bold text-white tracking-tight">Правила сервера</h2>
+        <p class="text-xs text-neutral-400 mt-1">Загрузка…</p>
+      </div>
+
+      <div id="rules-container" class="space-y-3">
+        <!-- Правила подставляются из rules.json -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-neutral-800/60 py-8 mt-auto">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+      <span>© 2026 Zenith SMP. Сервер в разработке.</span>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-white transition-colors">Главная</a>
+        <a href="donate.html" class="hover:text-white transition-colors">Донат</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
