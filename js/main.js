@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (
       (page === 'main' && (path === 'index.html' || path === '' || path === '/')) ||
       (page === 'rules' && path === 'rules.html') ||
+      (page === 'mods' && path === 'forbidden-mods.html') ||
       (page === 'donate' && path === 'donate.html')
     ) {
       btn.classList.add('nav-btn-active');
