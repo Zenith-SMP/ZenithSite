@@ -4,106 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zenith SMP</title>
-  
+  <meta name="description" content="Zenith SMP — Minecraft сервер в стадии разработки.">
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #050505;
-      color: #a1a1aa;
-    }
-
-    /* Фоновая сетка */
-    .bg-grid {
-      background-size: 40px 40px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    }
-
-    /* Блок с логотипом и эффектом тумана */
-    .fog-viewport {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .fog-layer {
-      position: absolute;
-      inset: -10px;
-      background: radial-gradient(circle, rgba(5,5,5,0) 20%, rgba(5,5,5,0.85) 70%, #050505 100%);
-      backdrop-filter: blur(14px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.6s ease;
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    .logo-target {
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-      filter: grayscale(30%) contrast(1.05);
-    }
-
-    /* Ховер эффекты тумана */
-    .fog-viewport:hover .fog-layer {
-      opacity: 0.15;
-      backdrop-filter: blur(0px);
-    }
-
-    .fog-viewport:hover .logo-target {
-      transform: scale(1.02);
-      filter: grayscale(0%) contrast(1);
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="min-h-screen flex flex-col bg-grid antialiased selection:bg-white selection:text-black">
 
   <header class="sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-neutral-800/60">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      
-      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('main')">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer">
         <div class="w-2 h-2 rounded-full bg-white"></div>
-        <span class="text-sm font-semibold tracking-wider text-white uppercase">Название</span>
-      </div>
+        <span class="text-sm font-semibold tracking-wider text-white uppercase">Zenith</span>
+      </a>
 
       <nav class="flex items-center gap-1 bg-neutral-900/60 p-1 rounded-lg border border-neutral-800">
-        <button id="tab-btn-main" onclick="switchTab('main')" 
-                class="flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-all bg-white text-black">
+        <a href="index.html" data-nav="main"
+           class="nav-btn-active flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-all">
           <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> Главная
-        </button>
-        <button id="tab-btn-rules" onclick="switchTab('rules')" 
-                class="flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium text-neutral-400 hover:text-white transition-all">
+        </a>
+        <a href="rules.html" data-nav="rules"
+           class="nav-btn">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Правила
-        </button>
-        <button id="tab-btn-donate" onclick="switchTab('donate')" 
-                class="flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium text-neutral-400 hover:text-white transition-all">
+        </a>
+        <a href="donate.html" data-nav="donate"
+           class="nav-btn">
           <i data-lucide="credit-card" class="w-3.5 h-3.5"></i> Донат
-        </button>
+        </a>
       </nav>
 
       <button onclick="copyIP()" class="flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800 transition-colors">
         <span>mc.myserver.net</span>
         <i id="ip-icon" data-lucide="copy" class="w-3.5 h-3.5 text-neutral-400"></i>
       </button>
-
     </div>
   </header>
 
   <main class="max-w-6xl mx-auto px-6 py-12 flex-grow w-full">
+    <div class="space-y-16">
 
-    <div id="tab-main" class="space-y-16">
-      
       <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-6 border-b border-neutral-800/50 pb-16">
-        
         <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs text-neutral-300">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            <span>&lt;3</span>
+            <span>В разработке</span>
           </div>
 
           <h1 class="text-4xl sm:text-6xl font-bold text-white tracking-tight leading-tight">
@@ -111,185 +55,77 @@
           </h1>
 
           <p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-lg">
-            
+            Новый Minecraft SMP-сервер. Сейчас мы только начинаем — правила, механики и мир ещё формируются. Присоединяйся к сообществу и следи за развитием.
           </p>
 
           <div class="flex items-center gap-3 pt-2">
             <button onclick="copyIP()" class="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-xs font-semibold hover:bg-neutral-200 transform hover:scale-105 transition-all duration-300">
-              <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i> 
+              <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
               <span class="group-hover:hidden">Начать играть</span>
               <span class="hidden group-hover:inline">Скопировать IP!</span>
             </button>
 
-            <button onclick="switchTab('rules')" class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-800 hover:bg-neutral-800 transition-colors">
+            <a href="rules.html" class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-800 hover:bg-neutral-800 transition-colors">
               <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Правила
-            </button>
+            </a>
           </div>
         </div>
 
         <div class="lg:col-span-5 flex justify-center">
           <div class="fog-viewport p-4 rounded-2xl cursor-pointer">
             <div class="fog-layer rounded-2xl"></div>
-            <img src="logo.png" 
-                 alt="Server Logo" 
+            <img src="logo.png"
+                 alt="Zenith SMP Logo"
                  class="logo-target w-64 h-64 sm:w-80 sm:h-80 object-contain rounded-xl mix-blend-screen">
           </div>
         </div>
-
       </section>
 
       <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        
-        <a href="https://discord.gg/yourserver" target="_blank" class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
+        <a href="https://discord.gg/yourserver" target="_blank" rel="noopener"
+           class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
           <div class="flex items-center justify-between">
             <img src="discord.png" alt="Discord" class="w-5 h-5 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
             <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors"></i>
           </div>
           <h3 class="text-sm font-semibold text-white">Discord</h3>
-          <p class="text-xs text-neutral-400 leading-relaxed">текст описание</p>
+          <p class="text-xs text-neutral-400 leading-relaxed">Основной чат сообщества, новости и поддержка</p>
         </a>
 
-        <a href="https://t.me/yourserver" target="_blank" class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
+        <a href="https://t.me/yourserver" target="_blank" rel="noopener"
+           class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
           <div class="flex items-center justify-between">
             <i data-lucide="send" class="w-5 h-5 text-white group-hover:scale-110 transition-transform"></i>
             <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors"></i>
           </div>
           <h3 class="text-sm font-semibold text-white">Telegram</h3>
-          <p class="text-xs text-neutral-400 leading-relaxed">текст описание</p>
+          <p class="text-xs text-neutral-400 leading-relaxed">Канал с обновлениями и анонсами</p>
         </a>
 
-        <a href="https://tiktok.com/@yourserver" target="_blank" class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
+        <a href="https://tiktok.com/@yourserver" target="_blank" rel="noopener"
+           class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
           <div class="flex items-center justify-between">
             <img src="tiktok.png" alt="TikTok" class="w-5 h-5 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
             <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors"></i>
           </div>
           <h3 class="text-sm font-semibold text-white">TikTok</h3>
-          <p class="text-xs text-neutral-400 leading-relaxed">текст описание</p>
+          <p class="text-xs text-neutral-400 leading-relaxed">Короткие видео и моменты с сервера</p>
         </a>
-
       </section>
 
     </div>
-
-    <div id="tab-rules" class="hidden space-y-8 max-w-3xl mx-auto">
-      <div>
-        <h2 class="text-2xl font-bold text-white tracking-tight">Правила сервера</h2>
-        <p class="text-xs text-neutral-400 mt-1">Подтекст1</p>
-      </div>
-
-      <div class="border border-neutral-800 rounded-lg overflow-hidden bg-neutral-900/20">
-          <button onclick="toggleAccordion('sec-1')" class="w-full px-5 py-3.5 flex justify-between items-center text-left hover:bg-neutral-900/50 transition-colors">
-            <span class="text-xs font-semibold text-white flex items-center gap-2">
-              <span class="text-neutral-500 font-mono">01.</span> Общие положения
-            </span>
-            <i id="icon-sec-1" data-lucide="chevron-down" class="w-4 h-4 text-neutral-400"></i>
-          </button>
-          <div id="sec-1" class="px-5 pb-4 text-xs text-neutral-400 space-y-2 border-t border-neutral-800/50 pt-3 leading-relaxed">
-            <p><strong class="text-neutral-200">1.1.</strong> Незнание правил не освобождает от ответственности. Начиная играть, вы автоматически соглашаетесь со всем регламентом.</p>
-            <p><strong class="text-neutral-200">1.2.</strong> Администрация оставляет за собой право решать спорные ситуации исходя из здравого смысла.</p>
-            <p><strong class="text-neutral-200">1.3.</strong> Ответственность за безопасность аккаунта несет только его владелец.</p>
-            <p><strong class="text-neutral-200">1.4.</strong> Администрация имеет право выдать любой вид наказания по своему усмотрению, без разглашения причины</p>
-          </div>
-        </div>
-
-        <div class="border border-neutral-800 rounded-lg overflow-hidden bg-neutral-900/20">
-          <button onclick="toggleAccordion('sec-2')" class="w-full px-5 py-3.5 flex justify-between items-center text-left hover:bg-neutral-900/50 transition-colors">
-            <span class="text-xs font-semibold text-white flex items-center gap-2">
-              <span class="text-neutral-500 font-mono">02.</span> Сторонние программы и модификации
-            </span>
-            <i id="icon-sec-2" data-lucide="chevron-right" class="w-4 h-4 text-neutral-400"></i>
-          </button>
-          <div id="sec-2" class="hidden px-5 pb-4 text-xs text-neutral-400 space-y-2 border-t border-neutral-800/50 pt-3 leading-relaxed">
-            <p><strong class="text-neutral-200">2.1.</strong> Использование чит-клиентов и вредоносного ПО строго запрещено. </span></p>
-            <p><strong class="text-neutral-200">2.2.</strong> Любой вид причинения вреда участникам сервера строго запрещен.(деанон, сват, прозвоны, снос и тд.)</p>
-            <p><strong class="text-neutral-200">2.3.</strong> Утаивание багов сервера и дюпов влечет перманентную блокировку.</p>
-            <p><strong class="text-neutral-200">2.4.</strong> Запрещено намеренное создание лаг-машин и перегрузка сервера.</p>
-          </div>
-        </div>
-
-        <div class="border border-neutral-800 rounded-lg overflow-hidden bg-neutral-900/20">
-          <button onclick="toggleAccordion('sec-3')" class="w-full px-5 py-3.5 flex justify-between items-center text-left hover:bg-neutral-900/50 transition-colors">
-            <span class="text-xs font-semibold text-white flex items-center gap-2">
-              <span class="text-neutral-500 font-mono">03.</span> PVP
-            </span>
-            <i id="icon-sec-3" data-lucide="chevron-right" class="w-4 h-4 text-neutral-400"></i>
-          </button>
-          <div id="sec-3" class="hidden px-5 pb-4 text-xs text-neutral-400 space-y-2 border-t border-neutral-800/50 pt-3 leading-relaxed">
-            <p><strong class="text-neutral-200">3.1.</strong> PVP(битва двух и больше игроков) может происходить за пределами нейтральных территорий без их письменного согласия(подписаная книга с договором) </p>
-            <p><strong class="text-neutral-200">3.2.</strong> Запрещаеться таргетить(намеренно убивать игрока 2+ раза подряд) который был принят на сервер менее 1 суток(если игрок сам намеренно контактирует - таргетом не считаеться)</p>
-          </div>
-        </div>
-
-        <div class="border border-neutral-800 rounded-lg overflow-hidden bg-neutral-900/20">
-          <button onclick="toggleAccordion('sec-4')" class="w-full px-5 py-3.5 flex justify-between items-center text-left hover:bg-neutral-900/50 transition-colors">
-            <span class="text-xs font-semibold text-white flex items-center gap-2">
-              <span class="text-neutral-500 font-mono">04.</span> Чат и коммуникация
-            </span>
-            <i id="icon-sec-4" data-lucide="chevron-right" class="w-4 h-4 text-neutral-400"></i>
-          </button>
-          <div id="sec-4" class="hidden px-5 pb-4 text-xs text-neutral-400 space-y-2 border-t border-neutral-800/50 pt-3 leading-relaxed">
-            <p><strong class="text-neutral-200">4.1.</strong> Реклама посторонних ресурсов и серверов запрещена.</p>
-            <p><strong class="text-neutral-200">4.2.</strong> Спам, флуд, капс и жесткие оскорбления пресекаются модерацией.(жесткость оскорблений решаеться администрацией по контексту)</p>
-            <p><strong class="text-neutral-200">4.3.</strong> Капс запрещен, исключение: аббревиатуры(Капсом считаеться более 50% заглавных букв в предложении).</p>
-          </div>
-        </div>
-
-    <div id="tab-donate" class="hidden space-y-8 max-w-3xl mx-auto">
-      <div>
-        <h2 class="text-2xl font-bold text-white tracking-tight">Поддержка проекта</h2>
-        <p class="text-xs text-neutral-400 mt-1">Все средства идут на поддержание оборудования.</p>
-      </div>
-
-      <div class="p-8 border border-neutral-800 rounded-xl bg-neutral-900/20 text-center space-y-3">
-        <i data-lucide="box" class="w-6 h-6 text-neutral-400 mx-auto"></i>
-        <h3 class="text-sm font-semibold text-white">Магазин привилегий</h3>
-        <p class="text-xs text-neutral-500 max-w-xs mx-auto">Раздел находится в процессе разработки.</p>
-      </div>
-    </div>
-
   </main>
 
-  <script>
-    lucide.createIcons();
+  <footer class="border-t border-neutral-800/60 py-8 mt-auto">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+      <span>© 2026 Zenith SMP. Сервер в разработке.</span>
+      <div class="flex items-center gap-4">
+        <a href="rules.html" class="hover:text-white transition-colors">Правила</a>
+        <a href="donate.html" class="hover:text-white transition-colors">Донат</a>
+      </div>
+    </div>
+  </footer>
 
-    function switchTab(activeTab) {
-      const tabs = ['main', 'rules', 'donate'];
-      tabs.forEach(tab => {
-        const content = document.getElementById('tab-' + tab);
-        const btn = document.getElementById('tab-btn-' + tab);
-        if (tab === activeTab) {
-          content.classList.remove('hidden');
-          btn.className = "flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-all bg-white text-black shadow-sm";
-        } else {
-          content.classList.add('hidden');
-          btn.className = "flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium text-neutral-400 hover:text-white transition-all";
-        }
-      });
-    }
-
-    function toggleAccordion(id) {
-      const content = document.getElementById(id);
-      const icon = document.getElementById('icon-' + id);
-      if (content.classList.contains('hidden')) {
-        content.classList.remove('hidden');
-        icon.setAttribute('data-lucide', 'chevron-down');
-      } else {
-        content.classList.add('hidden');
-        icon.setAttribute('data-lucide', 'chevron-right');
-      }
-      lucide.createIcons();
-    }
-
-    function copyIP() {
-      navigator.clipboard.writeText("mc.myserver.net");
-      const icon = document.getElementById('ip-icon');
-      icon.setAttribute('data-lucide', 'check');
-      lucide.createIcons();
-      setTimeout(() => {
-        icon.setAttribute('data-lucide', 'copy');
-        lucide.createIcons();
-      }, 2000);
-    }
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
