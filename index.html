@@ -27,6 +27,10 @@
            class="nav-btn">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Правила
         </a>
+        <a href="forbidden-mods.html" data-nav="mods"
+           class="nav-btn">
+          <i data-lucide="ban" class="w-3.5 h-3.5"></i> Запрещённые моды
+        </a>
         <a href="donate.html" data-nav="donate"
            class="nav-btn">
           <i data-lucide="credit-card" class="w-3.5 h-3.5"></i> Донат
@@ -50,34 +54,32 @@
             <span>В разработке</span>
           </div>
 
-          <h1 class="text-4xl sm:text-6xl font-bold text-white tracking-tight leading-tight">
-            <strong>
-              <span class="bg-gradient-to-r from-[#67BF9C] via-[#50B487] to-[#239D5C] bg-clip-text text-transparent">Zenith</span><br/>SMP
-            </strong>
+          <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+            <span class="block"># <strong>Zenith</strong></span>
+            <span class="block"><strong>SMP</strong></span>
           </h1>
 
-
-          <p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-lg">
+          <p class="text-sm text-neutral-400 max-w-lg leading-relaxed">
             Новый Minecraft SMP-сервер. Сейчас мы только начинаем — правила, механики и мир ещё формируются.
           </p>
 
-          <div class="flex items-center gap-3 pt-2">
-            <button onclick="copyIP()" class="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-xs font-semibold hover:bg-neutral-200 transform hover:scale-105 transition-all duration-300">
-              <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
-              <span class="group-hover:hidden">Начать играть</span>
-              <span class="hidden group-hover:inline">Скопировать IP!</span>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="copyIP()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition-colors">
+              Начать играть
             </button>
-
-            <a href="rules.html" class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-800 hover:bg-neutral-800 transition-colors">
-              <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Правила
+            <button onclick="copyIP()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-neutral-900 border border-neutral-800 text-xs font-medium text-neutral-300 hover:bg-neutral-800 hover:text-white transition-colors">
+              Скопировать IP!
+            </button>
+            <a href="rules.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium text-neutral-400 hover:text-white transition-colors">
+              Правила
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-5 flex justify-center">
-          <div class="fog-viewport p-4 rounded-2xl cursor-pointer">
-            <div class="fog-layer rounded-2xl"></div>
-            <img src="assets/logo.png"
+          <div class="fog-viewport">
+            <div class="fog-layer"></div>
+            <img src="logo.png"
                  alt="Zenith SMP Logo"
                  class="logo-target w-64 h-64 sm:w-80 sm:h-80 object-contain rounded-xl mix-blend-screen">
           </div>
@@ -88,7 +90,7 @@
         <a href="https://discord.com/invite/KYy7gqRMV" target="_blank" rel="noopener"
            class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
           <div class="flex items-center justify-between">
-            <img src="assets/discord.png" alt="Discord" class="w-5 h-5 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
+            <img src="discord.png" alt="Discord" class="w-5 h-5 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
             <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors"></i>
           </div>
           <h3 class="text-sm font-semibold text-white">Discord</h3>
@@ -108,7 +110,7 @@
         <a href="https://tiktok.com/@yourserver" target="_blank" rel="noopener"
            class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
           <div class="flex items-center justify-between">
-            <img src="assets/tiktok.png" alt="TikTok" class="w-5 h-5 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
+            <img src="tiktok.png" alt="TikTok" class="w-5 h-5 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
             <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors"></i>
           </div>
           <h3 class="text-sm font-semibold text-white">TikTok</h3>
