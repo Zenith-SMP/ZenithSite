@@ -52,38 +52,35 @@
           </div>
 
           <h1 class="text-4xl sm:text-6xl font-bold text-white tracking-tight leading-tight">
-            <strong><span style="color: #0fdba2;">Zenith</span><br/>SMP</strong>
+            <strong>
+              <span class="bg-gradient-to-r from-[#67BF9C] via-[#50B487] to-[#239D5C] bg-clip-text text-transparent">Zenith</span><br/>SMP
+            </strong>
           </h1>
 
-          <p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-lg">
-            Новый Minecraft SMP-сервер. Сейчас мы только начинаем — правила, механики и мир ещё формируются. Присоединяйся к сообществу и следи за развитием.
+          <p class="text-sm text-neutral-400 max-w-lg leading-relaxed">
+            Новый Minecraft SMP-сервер. Сейчас мы только начинаем — правила, механики и мир ещё формируются.
           </p>
 
-          <div class="flex items-center gap-3 pt-2">
-            <button onclick="copyIP()" class="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-xs font-semibold hover:bg-neutral-200 transform hover:scale-105 transition-all duration-300">
-              <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
-              <span class="group-hover:hidden">Начать играть</span>
-              <span class="hidden group-hover:inline">Скопировать IP!</span>
-            </button>
-
-            <a href="rules.html" class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 text-white text-xs font-medium border border-neutral-800 hover:bg-neutral-800 transition-colors">
-              <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Правила
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#" onclick="copyIP(); return false;" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition-colors">
+              Начать играть
             </a>
+            <button onclick="copyIP()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-700 text-xs font-medium text-neutral-300 hover:bg-neutral-900 hover:text-white transition-colors">
+              Скопировать IP!
+            </button>
           </div>
         </div>
 
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="fog-viewport p-4 rounded-2xl cursor-pointer">
-            <div class="fog-layer rounded-2xl"></div>
-            <img src="logo.png"
-                 alt="Zenith SMP Logo"
-                 class="logo-target w-64 h-64 sm:w-80 sm:h-80 object-contain rounded-xl mix-blend-screen">
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="fog-viewport">
+            <div class="fog-layer"></div>
+            <img src="logo.png" alt="Zenith" class="logo-target w-56 h-56 sm:w-72 sm:h-72 object-contain">
           </div>
         </div>
       </section>
 
-      <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="https://discord.gg/WdxD9nRekG" target="_blank" rel="noopener"
+      <section class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="https://discord.com/invite/KYy7gqRMV" target="_blank" rel="noopener"
            class="p-6 rounded-xl bg-neutral-900/30 border border-neutral-800/80 space-y-3 hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
           <div class="flex items-center justify-between">
             <img src="discord.png" alt="Discord" class="w-5 h-5 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
@@ -119,10 +116,9 @@
 
   <footer class="border-t border-neutral-800/60 py-8 mt-auto">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-      <span>© 2026 Zenith SMP. Сервер в разработке.</span>
+      <span>© 2026 Zenith SMP.</span>
       <div class="flex items-center gap-4">
         <a href="rules.html" class="hover:text-white transition-colors">Правила</a>
-        <a href="forbidden-mods.html" class="hover:text-white transition-colors">Запрещённые моды</a>
         <a href="donate.html" class="hover:text-white transition-colors">Донат</a>
       </div>
     </div>
